@@ -133,7 +133,9 @@ is an acceptable value.
 
 ### Custom templates
 
-A *optional* list of custom templates. Each item of the list defines:
+A *optional* list of custom templates used for override the default one.
+
+Each item of the list defines:
 
 `regexps`
 :   A list of regexp to match files.
