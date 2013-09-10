@@ -14,7 +14,7 @@ The `show-config` command will show the current Markdoc config:
 
     >>> exit_code = markdoc('show-config') # doctest: +ELLIPSIS
     {'9d03e32c6cb1455388a170e3bb0c2030': '7010d5d5871143d089cb662cb540cbd5',
-     'custom-templates': [{'regexps': ['/wiki/custom/.*'],
+     'custom-templates': [{'regexps': ['custom/.*'],
                            'template': 'custom-template.html'}],
      'hide-prefix': '_',
      'meta.config-file': '.../example/markdoc.yaml',
