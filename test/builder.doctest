@@ -42,6 +42,7 @@ You can also walk through all files in the wiki, using the `walk()` method:
     file1.md
     file2.md
     file3.md
+    custom/hello.md
     subdir/hello.md
 
 Rendering
@@ -117,3 +118,22 @@ You can render whole documents using `Builder.render_document()`:
     </html>
 
 This uses the `document.html` Jinja2 template, by default located in `WIKI_ROOT/.templates/`, to produce the documents.
+
+Custom templates
+----------------
+
+If the document has a custom template defined in the configuration, it's applied.
+
+    >>> print b.render_document('custom/hello.md')
+    <?xml version="1.0" encoding="utf-8"?>
+    <!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+      <title>Hello custom.</title>
+      <link rel="stylesheet" type="text/css" href="/other.css" />
+    </head>
+    <body>
+      <h1>Custom Template</h1>
+      <h1>Hello custom.</h1>
+    </body>
+    </html>

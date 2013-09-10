@@ -4,6 +4,15 @@ google-analytics: UA-9915287-4
 wiki-dir: "."
 static-dir: ".static"
 
+custom-templates:
+  -
+    regexps: ["/about.md","/tips/*.md" ]
+    template: "other1.html"
+  -
+    regexps: ["/index.md" ]
+    template: "index.html"
+
+
 markdown:
   extensions:
     - codehilite

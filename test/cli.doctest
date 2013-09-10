@@ -14,6 +14,8 @@ The `show-config` command will show the current Markdoc config:
 
     >>> exit_code = markdoc('show-config') # doctest: +ELLIPSIS
     {'9d03e32c6cb1455388a170e3bb0c2030': '7010d5d5871143d089cb662cb540cbd5',
+     'custom-templates': [{'regexps': ['/wiki/custom/.*'],
+                           'template': 'custom-template.html'}],
      'hide-prefix': '_',
      'meta.config-file': '.../example/markdoc.yaml',
      'meta.root': '.../example',
@@ -43,6 +45,7 @@ There are three other commands -- `clean-html`, `clean-temp`, and `sync-html` --
     >>> print '\n'.join(sorted(os.listdir(CONFIG.html_dir)))
     _list.html
     an_empty_file.html
+    custom
     example.css
     file1.html
     file2.html

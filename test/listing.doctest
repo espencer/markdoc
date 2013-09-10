@@ -13,6 +13,7 @@ The wiki should now be built in the HTML root:
     >>> print '\n'.join(os.listdir(CONFIG.html_dir))
     _list.html
     an_empty_file.html
+    custom
     example.css
     file1.html
     file2.html
@@ -60,7 +61,8 @@ Now we can get the listing for the HTML root itself, just by passing the empty s
                 'size': 254,
                 'slug': 'file2',
                 'title': u'World'}],
-     'sub_directories': [{'basename': 'subdir', 'href': '/subdir/'}]}
+     'sub_directories': [{'basename': 'custom', 'href': '/custom/'},
+                         {'basename': 'subdir', 'href': '/subdir/'}]}
 
 We can also get the listings for subdirectories, by passing in their paths, relative to the HTML root:
 
