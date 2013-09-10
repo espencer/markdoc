@@ -32,6 +32,15 @@ Markdoc’s behavior:
     listing-filename: "_list.html"
     use-default-static: true
     use-default-templates: true
+
+    # Custom templates
+    custom-templates:
+      -
+        regexps: ["about.md", "tips/.*" ]
+        template: "other-template.html"
+      -
+        regexps: ["index.md" ]
+        template: "index-template.html"
     
     # Rendering
     markdown:
@@ -121,6 +130,16 @@ is an acceptable value.
     [`rsync` documentation][rsync-docs].
 
   [rsync-docs]: http://www.samba.org/ftp/rsync/rsync.html
+
+### Custom templates
+
+A *optional* list of custom templates. Each item of the list defines:
+
+`regexps`
+:   A list of regexp to match files.
+
+`template`
+:   The template to use for the matching files.
 
 ### Building
 
