@@ -181,8 +181,15 @@ class Builder(object):
         context['title'] = self.title(path)
         context['crumbs'] = self.crumbs(path)
         context['make_relative'] = lambda href: make_relative(path, href)
+
+        template = 'document.html'
+        # custom templates
+        for item in self.config.get('custom-templates', []):
+            if (any(re.match(regexp, path) for regexp in item['regexps'])):
+                template = item['template']
+                break
         
-        template = self.config.template_env.get_template('document.html')
+        template = self.config.template_env.get_template(template)
         return template.render(context)
     
     def render_listing(self, path):
